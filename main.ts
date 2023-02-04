@@ -1,11 +1,11 @@
 import { Application, denoPlugin, esbuild } from "./deps.server.ts";
 
 // Transpile jsx to js for React.
-await esbuild.default.initialize({
-  wasmURL: "https://esm.sh/esbuild-wasm/esbuild.wasm",
+await esbuild.initialize({
+  //wasmURL: "https://esm.sh/esbuild-wasm/esbuild.wasm",
   worker: false,
 });
-const output = await esbuild.default.build({
+const output = await esbuild.build({
   plugins: [denoPlugin()],
   entryPoints: ["./src/index.tsx"],
   write: false,
